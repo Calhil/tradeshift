@@ -34,6 +34,6 @@ class NodeController {
     public ResponseEntity<String> updateParent(@PathVariable long nodeID,
                              @PathVariable long newParentID) {
         nodeService.changeParent(nodeID, newParentID);
-        return ResponseEntity.ok("Succesfully updated parent node");
+        return ResponseEntity.ok("Successfully updated parent node");
     }
 }
