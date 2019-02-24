@@ -1,0 +1,25 @@
+version: '2'
+services:
+
+  app:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+  db:
+    container_name: postgres
+    image: postgres:9.6
+#    volumes:
+#      - postgres_db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=tradeshift
+#      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+
+#volumes:
+#  postgres_db:
